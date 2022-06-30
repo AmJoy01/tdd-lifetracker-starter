@@ -107,13 +107,13 @@ The components in the `App.jsx` file should render the following components (alo
 - To build out the front-end, start with the `App.jsx` component:
 
   - [ ] **`App.jsx`**
-    - [ ] Should be wrapped by an element with the `className` of `app`
+    - [x] Should be wrapped by an element with the `className` of `app`
     - [ ] The core App component that contains the routes for the app wrapped in Context providers
-    - [ ] Renders the `Navbar` component on every route
-    - [ ] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-      - [ ] `/` - Should render the `Landing.jsx` component
-      - [ ] `/login` - Should render the `LoginPage.jsx` component
-      - [ ] `/register` - Should render the `RegistrationPage.jsx` component
+    - [x] Renders the `Navbar` component on every route
+    - [x] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
+      - [x] `/` - Should render the `Landing.jsx` component
+      - [x] `/login` - Should render the `LoginPage.jsx` component
+      - [x] `/register` - Should render the `RegistrationPage.jsx` component
       - [ ] `/activity` - Should render the `ActivityPage.jsx` component (only if the user is logged in, otherwise it renders the `AccessForbidden.jsx` component)
       - [ ] `/nutrition/* - should render the `NutritionPage.jsx`component (only if the user is logged in, otherwise it renders the`AccessForbidden.jsx` component)
       - [ ] `*` - anything else should render the `NotFound` component
@@ -195,10 +195,10 @@ The components in the `App.jsx` file should render the following components (alo
 
   - [ ] The **`LoginForm.jsx`** component:
 
-    - [ ] Should render JSX that is wrapped by an element with the `className` of `login-form`
-    - [ ] Should render an input element for the following fields:
-      - [ ] `email`
-      - [ ] `password`
+    - [x] Should render JSX that is wrapped by an element with the `className` of `login-form`
+    - [x] Should render an input element for the following fields:
+      - [x] `email`
+      - [x] `password`
     - [ ] Each `input` element in the form should have a `className` of `form-input` and should have the following props set:
       - [ ] `name` - the `name` of the `input` field being rendered (`email`, `password`)
       - [ ] `type` - the type of the `input` element (`text`, `email`, `number`, etc)
@@ -442,21 +442,21 @@ Here are the pieces of functionality that should be built out for the backend:
 
 - **Project setup**
   - [ ] First things first, bootstrap the Express application with some essential files and starter code
-  - [ ] Create a `.gitignore` file, an `app.js` file, an `app.test.js` file, and a `server.js` file
-  - [ ] Make sure `node_modules` are added to the `.gitignore` file.
-  - [ ] Add dependencies for `express@next`, `morgan`, `cors`, and `nodemon`
-  - [ ] Install new dependencies for `bcrypt`, `jsonwebtoken`, `colors`, `dotenv`, `pg`
+  - [x] Create a `.gitignore` file, an `app.js` file, an `app.test.js` file, and a `server.js` file
+  - [x] Make sure `node_modules` are added to the `.gitignore` file.
+  - [x] Add dependencies for `express@next`, `morgan`, `cors`, and `nodemon`
+  - [x] Install new dependencies for `bcrypt`, `jsonwebtoken`, `colors`, `dotenv`, `pg`
   - [ ] Commit all work to `git`
-  - [ ] Add a `.env` file to the root of the repo and include the following environment variables
-    - [ ] `PORT` (default to `3001`)
-    - [ ] `SECRET_KEY` (set to a long random string)
-    - [ ] `BCRYPT_WORK_FACTOR` (set to `13`)
-    - [ ] `DATABASE_USER`
-    - [ ] `DATABASE_PASS`
-    - [ ] `DATABASE_HOST`
-    - [ ] `DATABASE_PORT`
-    - [ ] `DATABASE_NAME` - (set to `lifetracker`)
-    - [ ] `DATABASE_TEST_NAME` - (set to `lifetracker_test`)
+  - [x] Add a `.env` file to the root of the repo and include the following environment variables
+    - [x] `PORT` (default to `3001`)
+    - [x] `SECRET_KEY` (set to a long random string)
+    - [x] `BCRYPT_WORK_FACTOR` (set to `13`)
+    - [x] `DATABASE_USER`
+    - [x] `DATABASE_PASS`
+    - [x] `DATABASE_HOST`
+    - [x] `DATABASE_PORT`
+    - [x] `DATABASE_NAME` - (set to `lifetracker`)
+    - [x] `DATABASE_TEST_NAME` - (set to `lifetracker_test`)
   - [ ] Add a `config.test.js` file
     - [ ] Write tests that check to make sure that:
       - [ ] `process.env.NODE_ENV` is set to `test` when the test suite is run
@@ -481,31 +481,31 @@ Here are the pieces of functionality that should be built out for the backend:
   - Time bring in a PostgreSQL database client as the application's persistence layer
   - Make sure the PostgreSQL server is running
   - Create two files at the root of the project:
-    - [ ] `lifetracker-schema.sql`
-      - [ ] This script should:
-        - [ ] Create a `users` table with the following columns:
-          - [ ] `id`
-          - [ ] `username`
-          - [ ] `password`
-          - [ ] `first_name`
-          - [ ] `last_name`
-          - [ ] `email`
-          - [ ] `created_at`
-          - [ ] `updated_at`
-        - [ ] Create a `nutrition` table with the following columns:
-          - [ ] `id`
-          - [ ] `name`
-          - [ ] `category`
-          - [ ] `calories`
-          - [ ] `image_url`
-          - [ ] `user_id`
-          - [ ] `created_at`
-        - [ ] **Any other tables** that the application might depend on
-    - [ ] `lifetracker.sql`
-      - [ ] This script should:
-        - [ ] 1. Let the user know that they're about to delete the `lifetracker` db and prompt them to confirm that is what they want.
-        - [ ] 2. Drop the `lifetracker` database and then create a new `lifetracker` database, before connecting to the `lifetracker` database.
-        - [ ] 3. It should then run the `lifetracker-schema.sql` file.
+    - [x] `lifetracker-schema.sql`
+      - [x] This script should:
+        - [x] Create a `users` table with the following columns:
+          - [x] `id`
+          - [x] `username`
+          - [x] `password`
+          - [x] `first_name`
+          - [x] `last_name`
+          - [x] `email`
+          - [x] `created_at`
+          - [x] `updated_at`
+        - [x] Create a `nutrition` table with the following columns:
+          - [x] `id`
+          - [x] `name`
+          - [x] `category`
+          - [x] `calories`
+          - [x] `image_url`
+          - [x] `user_id`
+          - [x] `created_at`
+        - [x] **Any other tables** that the application might depend on
+    - [x] `lifetracker.sql`
+      - [x] This script should:
+        - [x] 1. Let the user know that they're about to delete the `lifetracker` db and prompt them to confirm that is what they want.
+        - [x] 2. Drop the `lifetracker` database and then create a new `lifetracker` database, before connecting to the `lifetracker` database.
+        - [x] 3. It should then run the `lifetracker-schema.sql` file.
         - [ ] Follow the exact same steps for `1`, `2`, and `3`, but with the `lifetracker_test` database.
   - [ ] Setup the database by running `psql -f lifetracker.sql`
   - [ ] Create a new file at the root of the project called `db.js`. In that file:
