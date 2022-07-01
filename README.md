@@ -1,5 +1,10 @@
 # Project #3: LifeTracker Application
 
+[](../../../../../../Downloads/LifeTracker%20-%201%20July%202022.mp4)
+
+Example site:
+http://codepath-lifetracker.surge.sh/activity
+
 ## Overview
 
 > Data is the new oil - Clive Humbly
@@ -172,11 +177,11 @@ The components in the `App.jsx` file should render the following components (alo
 
   - [ ] The **`Navbar.jsx`** component
 
-    - [ ] Should render JSX that is wrapped by a `nav` element with the `className` of `navbar`
-    - [ ] Should render the app's logo:
-      - [ ] It should be an element with the `className` of `logo`.
-      - [ ] Inside that element should be a `Link` component from `react-router-dom` that navigates the user to the `/` route when clicked.
-      - [ ] Inside that `Link` component should be the application's logo (text or image)
+    - [x] Should render JSX that is wrapped by a `nav` element with the `className` of `navbar`
+    - [x] Should render the app's logo:
+      - [x] It should be an element with the `className` of `logo`.
+      - [x] Inside that element should be a `Link` component from `react-router-dom` that navigates the user to the `/` route when clicked.
+      - [x] Inside that `Link` component should be the application's logo (text or image)
     - [ ] Should render the `NavLinks.jsx` component with links to each of the resources and the `/activity` route
 
   - [ ] The **`NavLinks.jsx`** component:
@@ -215,21 +220,21 @@ The components in the `App.jsx` file should render the following components (alo
 
   - [ ] The **`LoginPage.jsx`** component:
 
-    - [ ] Should render JSX that is wrapped by an element with the `className` of `login-page`
-    - [ ] Using either a custom hook, context, or manually set state, this component should check to see if a user is already logged in
+    - [x] Should render JSX that is wrapped by an element with the `className` of `login-page`
+    - [x] Using either a custom hook, context, or manually set state, this component should check to see if a user is already logged in
       - [ ] If the user is already logged in, it should redirect them to the `/activity` page
       - [ ] If no user is authenticated, it should render the `LoginForm.jsx` component and pass it any props it needs
 
   - [ ] The **`RegistrationForm.jsx`** component:
 
-    - [ ] Should render JSX that is wrapped by an element with the `className` of `registration-form`
-    - [ ] Should render an input element for the following fields:
-      - [ ] `email`
-      - [ ] `username`
-      - [ ] `firstName`
-      - [ ] `lastName`
-      - [ ] `password`
-      - [ ] `passwordConfirm`
+    - [x] Should render JSX that is wrapped by an element with the `className` of `registration-form`
+    - [x] Should render an input element for the following fields:
+      - [x] `email`
+      - [x] `username`
+      - [x] `firstName`
+      - [x] `lastName`
+      - [x] `password`
+      - [x] `passwordConfirm`
     - [ ] Each `input` element in the form should have a `className` of `form-input` and should have the following props set:
       - [ ] `name` - the `name` of the `input` field being rendered (`email`, `username`, `firstName`, `lastName`, `password`, `passwordConfirm`)
       - [ ] `type` - the type of the `input` element (`text`, `email`, `number`, etc)
@@ -255,8 +260,8 @@ The components in the `App.jsx` file should render the following components (alo
 
   - [ ] The **`LandingPage.jsx`** component:
 
-    - [ ] Should render JSX that is wrapped by an element with the `className` of `landing-page`
-    - [ ] Should render an element with the `className` of `hero`
+    - [x] Should render JSX that is wrapped by an element with the `className` of `landing-page`
+    - [x] Should render an element with the `className` of `hero`
       - [ ] Inside it, display a large hero image using an `img` element with the `className` of `hero-img`
       - [ ] Render a brief blurb on what this application is about inside an element with the `className` of `cta`
     - [ ] Should allow unauthenticated access
@@ -284,14 +289,14 @@ The components in the `App.jsx` file should render the following components (alo
 
   - [ ] The **`ActivityPage.jsx`** component:
 
-    - [ ] Should render JSX that is wrapped by an element with the `className` of `activity-page`
+    - [x] Should render JSX that is wrapped by an element with the `className` of `activity-page`
     - [ ] It should call the `useActivityContext` hook and extract all the necessary data from it.
     - [ ] If the `isProcessing` flag is `true`, it should render the `Loading.jsx` component
     - [ ] If the `isProcessing` flag is `false`, it should render the `ActivityFeed.jsx` component and pass it the appropriate props
 
   - [ ] The **`ActivityFeed.jsx`** component:
 
-    - [ ] Should render JSX that is wrapped by an element with the `className` of `activity-feed`
+    - [x] Should render JSX that is wrapped by an element with the `className` of `activity-feed`
     - [ ] Should accept **at least** the following props:
       - [ ] `totalCaloriesPerDay` - an array of items containing summary data about the total calories consumed per day
       - [ ] `avgCaloriesPerCategory` - an array of items containing summary data about the average calories consumed per category
@@ -457,17 +462,17 @@ Here are the pieces of functionality that should be built out for the backend:
     - [x] `DATABASE_PORT`
     - [x] `DATABASE_NAME` - (set to `lifetracker`)
     - [x] `DATABASE_TEST_NAME` - (set to `lifetracker_test`)
-  - [ ] Add a `config.test.js` file
+  - [x] Add a `config.test.js` file
     - [ ] Write tests that check to make sure that:
       - [ ] `process.env.NODE_ENV` is set to `test` when the test suite is run
       - [ ] There is an `IS_TESTING` variable that is exported, which should only be true if `process.env.NODE_ENV` is set to `test`
     - [ ] Write tests to ensure that certain environment variables are exported from the `config.js` file and can be imported:
-      - [ ] `PORT`
-      - [ ] `SECRET_KEY`
-      - [ ] `BCRYPT_WORK_FACTOR`
-      - [ ] `IS_TESTING`
-    - [ ] Write tests to ensure that a `getDatabaseUri` function is exported from the `config.js` file
-      - [ ] The `getDatabaseUri` function should:
+      - [x] `PORT`
+      - [x] `SECRET_KEY`
+      - [x] `BCRYPT_WORK_FACTOR`
+      - [x] `IS_TESTING`
+    - [x] Write tests to ensure that a `getDatabaseUri` function is exported from the `config.js` file
+      - [x] The `getDatabaseUri` function should:
         - [ ] Check to see if a valid `process.env.DATABASE_URL` environment variable exists, and return that if it does.
         - [ ] When `IS_TESTING` is `true`, the `getDatabaseUri` function should use the test database
         - [ ] Otherwise, it should combine the proper database environment variables into a database connection string if no `process.env.DATABASE_URL` environment variable exists
@@ -558,10 +563,10 @@ Here are the pieces of functionality that should be built out for the backend:
   - [ ] Add new directories for `models`, `routes`, and `middleware`
   - [ ] The **User** model
     - [ ] In the `models` directory, create two new files: `models/user.js` and `models/user.test.js`
-      - [ ] The `User` model should have **at least** the following static methods:
-        - [ ] `login`
-        - [ ] `register`
-        - [ ] `fetchUserByEmail`
+      - [x] The `User` model should have **at least** the following static methods:
+        - [x] `login`
+        - [x] `register`
+        - [x] `fetchUserByEmail`
     - [ ] In the `models/user.test.js` file:
       - [ ] Test the `login` method. Write test cases for:
         - [ ] User can login successfully with proper credentials
