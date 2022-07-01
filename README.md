@@ -1,6 +1,7 @@
 # Project #3: LifeTracker Application
 
-[](../../../../../../Downloads/LifeTracker%20-%201%20July%202022.mp4)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/93353341/176978009-8375e7ae-287d-4325-a3bf-3d9813c107f0.gif)
+
 
 Example site:
 http://codepath-lifetracker.surge.sh/activity
