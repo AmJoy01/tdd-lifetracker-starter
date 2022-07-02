@@ -1,7 +1,7 @@
 import * as React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import LoginPage from "../LoginPage/LoginPage"
-import Landing from "../Landing/Landing"
+import LandingPage from "../LandingPage/LandingPage"
 import RegistrationPage from "../RegistrationPage/RegistrationPage"
 import ActivityPage from "../ActivityPage/ActivityPage"
 import Navbar from "../Navbar/Navbar"
@@ -10,8 +10,7 @@ import NotFound from "../NotFound/NotFound"
 import "./App.css"
 
 export default function App() {
-  // const [appState, setAppState] = React.useState({})
-
+  
   return (
     <div className="app">
       <React.Fragment>
@@ -19,7 +18,7 @@ export default function App() {
           <Navbar/>
         <Routes>
           <Route path='/' element={
-            <Landing/>
+            <LandingPage/>
           }/>
           <Route path='/login' element={
             <LoginPage/>

@@ -13,11 +13,11 @@ export default function LoginPage() {
           <div className="form">
               <div className="input-field">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" placeholder="user@gmail.com" value/>
+                <input type="email" name="email" placeholder="user@gmail.com" value= ""/>
               </div>
               <div className="input-field">
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" placeholder="password" value/>
+                <input type="password" name="password" placeholder="password" value= ""/>
               </div>
               <button className="btn">Login</button>
               <div className="footer">
