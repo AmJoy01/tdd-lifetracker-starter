@@ -1,8 +1,8 @@
 # Week 3 Assignment: Life Tracker
 
-Submitted by: **NAME**
+Submitted by: Amber Lewis
 
-Deployed Application: <a href="https://www.loom.com/share/ff22f667e419401788583909bd2f5343">Life Tracker</a>
+Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker</a>
 
 
 ## Application Features
@@ -11,7 +11,7 @@ Deployed Application: <a href="https://www.loom.com/share/ff22f667e4194017885839
 
 - [x] **The Nav Bar:** Implement customized views for users who are logged in vs not logged in.
   - [ ] If the user is logged in, it should display a **Sign Out** button. 
-  - [ ] If no user is logged in, it should display **Login** and **Register** buttons
+  - [x] If no user is logged in, it should display **Login** and **Register** buttons
   - [x] Display a logo on the far left side, and contain links to the individual detailed activity page. 
 - [x] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about
 - [x] **Login Page:** A form that allows users to login with email and password.
@@ -39,7 +39,8 @@ Implement any of the following features to improve the application:
 
 ### Walkthrough Video
 
-[ezgif com-gif-maker](https://user-images.githubusercontent.com/93353341/177063348-e68ef635-15e8-4194-9505-0ad42bb3ce43.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/93353341/177064532-02ae4e55-8513-4992-a8b6-aa088e506527.gif)
+
 
 ### Reflection
 
