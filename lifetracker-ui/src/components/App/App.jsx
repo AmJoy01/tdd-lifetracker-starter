@@ -10,24 +10,24 @@ import NotFound from "../NotFound/NotFound"
 import "./App.css"
 
 export default function App() {
-  
+  const [appState, setAppState] = React.useState({})
   return (
     <div className="app">
       <React.Fragment>
         <BrowserRouter>
-          <Navbar/>
+          <Navbar user = {appState.user}/>
         <Routes>
           <Route path='/' element={
             <LandingPage/>
           }/>
           <Route path='/login' element={
-            <LoginPage/>
+            <LoginPage setAppState = {setAppState}/>
           }/>
           <Route path='/register' element={
-            <RegistrationPage />
+            <RegistrationPage setAppState = {setAppState}/>
           }/>
           <Route path='/activity' element={
-            <ActivityPage />
+            <ActivityPage user = {appState?.user} appState = {appState} setAppState = {setAppState}/>
           }/>
           <Route path='*' element={
             <NotFound />

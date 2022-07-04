@@ -1,0 +1,125 @@
+.registration-form{
+    display: flex;
+    align-items:center;
+}
+
+div{
+    margin: 0;
+    padding: 0;
+}
+
+.registration-form {
+    min-height: calc(100vh - 100px);
+    height: 100%;
+    max-height: calc(100vh - 100px);
+    width: 100%;
+    max-width: 100vw;
+    justify-content: center;
+}
+
+.registration-form .container {
+    min-height: 600px;
+    width: 520px;
+    padding: 24px 36px 0;
+    flex-direction: column;
+}
+
+.registration-form .container h2{
+    font-size: 42px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #fff;
+}
+
+
+.registration-form .container .form-input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.registration-form .container .form-input .input-field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 8px 0;
+    flex: 1 1;
+}
+
+.registration-form .container .split-input-field{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    grid-gap: 20px;
+    gap: 20px;
+}
+
+.registration-form .container .footer, .registration-form .container .form-input button {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-page .container .form-input .submit-registration{
+    height: 70px;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.submit-registration{
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .1s ease;
+    padding: 12px 18px;
+    border-radius: 4px;
+    background: #00c98e;
+    color: #fff;
+}
+
+.submit-registration {
+    white-space: nowrap;
+    font-weight: 700;
+    transition: all .1s ease;
+    padding: 12px 18px;
+    border-radius: 4px;
+}
+
+.registration-form .container .form-input .input-field label {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.registration-form .container .form-input .input-field input {
+    height: 50px;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 1px solid #e4e4e4;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+}
+
+p{
+    color: #fff;
+}
+
+a{
+    color: #00c98e;
+}
+
+span{
+    color: red;
+}
