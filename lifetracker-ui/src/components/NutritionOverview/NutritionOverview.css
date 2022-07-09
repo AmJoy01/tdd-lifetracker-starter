@@ -1,0 +1,40 @@
+.nutrition-overview{
+    display: flex;
+    flex-direction: column;
+}
+.nutrition-overview .header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.nutrition-overview .header h3{
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+}
+.Button.outline.aqua {
+    background: transparent;
+    color: #03c5d1;
+    border: 1px solid #03c5d1;
+}
+.nutrition-overview .feed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+    gap: 10px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+.empty-message {
+    margin: 0 auto;
+}
+
+.empty-message h2{
+    font-size: 32px;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}

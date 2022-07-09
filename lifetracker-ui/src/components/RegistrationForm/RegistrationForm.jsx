@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
 import "./RegistrationForm.css"
 
-export default function RegistrationForm(){
+export default function RegistrationForm({setAppState}){
     <Navbar/>
 
     const navigate = useNavigate()
@@ -45,7 +45,7 @@ export default function RegistrationForm(){
         setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
       }
     
-      const handleOnSubmit = async () => {
+      const signupUser = async () => {
         setIsLoading(true)
         setErrors((e) => ({ ...e, form: null }))
     
@@ -156,7 +156,7 @@ export default function RegistrationForm(){
                         />
                         {errors.passwordConfirm && <span className="error">{errors.passwordConfirm}</span>}
                     </div>
-                    <button className="submit-registration" disabled={isLoading} onClick={handleOnSubmit}>
+                    <button className="submit-registration" disabled={isLoading} onClick={signupUser}>
                         {isLoading ? "Loading..." : "Create Account"}
                     </button>
                 </div>

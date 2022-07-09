@@ -1,5 +1,6 @@
 import Navbar from "components/Navbar/Navbar"
 import "./ActivityFeed.css"
+import { Link } from "react-router-dom"
 
 export default function ActivityPage(){
     <Navbar/>
@@ -9,9 +10,14 @@ export default function ActivityPage(){
                 <div className="actions">
                     <h2>Activity Feed</h2>
                     <div className="btns">
+                        
+                        <Link to="/exercise/create">
                         <button className="Button outline small outline gold">Add Exercise</button>
+                        </Link>
                         <button className="Button outline small outline blue">Log Sleep</button>
+                        <Link to ="/nutrition/create">
                         <button className="Button outline small outline aqua">Record Nutrition</button>
+                        </Link>
                     </div>
                 </div>
                 {/* End of actions */}

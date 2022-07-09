@@ -1,12 +1,13 @@
 import * as React from "react"
 import Navbar from "components/Navbar/Navbar"
 import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
+import apiClient from "../../services/apiClient"
 import "./LoginForm.css"
+import { useAuthContext } from "../../contexts/auth"
 
 export default function LoginForm() {
 <Navbar/>
-
+    const { user, setUser} = useAuthContext()
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = React.useState(false)
     const [errors, setErrors] = React.useState({})
@@ -15,6 +16,12 @@ export default function LoginForm() {
         password: "",
     })
   
+    React.useEffect(() => {
+      if(user?.email) {
+        navigate("/activity")
+      }
+    }, [user,navigate])
+
     const handleOnInputChange = (event) => {
         if (event.target.name === "email") {
           if (event.target.value.indexOf("@") === -1) {
@@ -32,22 +39,16 @@ export default function LoginForm() {
         setIsLoading(true)
         setErrors((e) => ({ ...e, form: null }))
     
-        try {
-          const response = await axios.post(`http://localhost:3001/auth/login`, form)
-          if (response?.data) {
-            setAppState(response.data)
-            setIsLoading(false)
-            navigate("/activity")
-          } else {
-            setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))
-            setIsLoading(false)
-          }
-        } catch (err) {
-          console.log(err)
-          const message = err?.response?.data?.error?.message
-          setErrors((e) => ({ ...e, form: message ? String(message) : String(err) }))
-          setIsLoading(false)
+        const {data, error} = await apiClient.loginUser({ email: form.email, password: form.password})
+        if(error){
+          setErrors((e) => ({ ...e, form: error}))
+        } 
+        if(data?.user) {
+          setUser(data.user)
+          apiClient.setToken(data.token)
         }
+
+        setIsLoading(false)
       }
 
   return(

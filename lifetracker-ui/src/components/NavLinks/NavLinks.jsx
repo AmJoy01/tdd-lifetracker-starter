@@ -1,11 +1,21 @@
-import { Link, useLocation } from "react-router-dom"
+import * as React from "react"
+import { Link } from "react-router-dom"
 import "./NavLinks.css"
+import { useAuthContext } from "../../contexts/auth"
+import apiClient from "../../services/apiClient"
 
-export default function NavLinks() {
+export default function NavLinks() {  
+  const {user, setUser, setError} = useAuthContext()
+
+  const handleOnLogout = async () =>{
+    await apiClient.logoutUser()
+    setError(null)
+    setUser({})
+  }
+
   return(
     <div className="nav-links">
       <div className="nav">
-          {location.pathname.indexOf("portal") === -1 ? (
               <ul className="links">
                 <li><Link to="/activity">
                   Activity
@@ -23,19 +33,25 @@ export default function NavLinks() {
                   Sleep
                 </Link>
                 </li>
-                <li>
-                  <Link to="/login">
-                    Login
+                {user?.email ? <li className="btn logout-button" onClick={handleOnLogout}>
+                  <Link to="/">
+                    Log out
                   </Link>
-                </li>
-                <li className="btn secondary">
-                <Link to="/register">
-              Sign Up
+                </li>:<><li className="btn">
+            <Link to="/login">
+              Login
             </Link>
-                </li>
-              </ul>
+          </li><li className="btn secondary">
+              <Link to="/register">
+                Sign Up
+              </Link>
+            </li></>}
+                
+                
+                
+                
+            </ul>
 
-          ) : null}
       </div>
 
     </div>
