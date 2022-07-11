@@ -2,7 +2,8 @@
 
 Submitted by: Amber Lewis
 
-Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker</a>
+Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker Week 1</a>
+<a href="https://recordit.co/ntj2R7FR1N">Life Tracker Week 2</a>
 
 
 ## Application Features
