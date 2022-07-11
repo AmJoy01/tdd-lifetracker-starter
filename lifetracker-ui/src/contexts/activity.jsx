@@ -1,33 +1,50 @@
 import * as React from "react" 
+import apiClient from "../services/apiClient"
 
-const sleep = miliseconds => {
-    return new Promise(resolve => setTimeout(resolve, miliseconds))
-};
 
 const ActivityContext = React.createContext({})
 
-const ActivityContextProvider = (props)=>{
+const ActivityContextProvider = ({children})=>{
+    const [activity, setActivity] = React.useState({})
+    const [initialized, setInitialized] = React.useState(false)
     const [isLoading, setIsLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
     
-    // React.useEffect(()=>{
-        
-    // }, [])
-    const login = () => {
-        sleep(2000).then(() => setIsLoading(true))
-    }
-
-    const logout = () =>{
-        sleep(2000).then(() => setIsLoading(false))
-    }
-
-    const authContextValue = {
-        login, 
+    React.useEffect(()=>{
+        const fetchActivity = async ()=>{
+            setIsLoading(true)
+            const { data, error} = await apiClient.fetchUserfromToken()
+            if(data){
+                setActivity(data.user)
+            }
+            if(error){
+                setError(error)
+            }
+            const token = localStorage.getItem("lifetracker_token")
+            if(token){
+                setIsLoading(false)
+                apiClient.setToken(token)
+                fetchActivity()
+            }
+        }
+    }, [])
+    
+    const activityContextValue = {
+        activity,
+        setActivity, 
+        error, 
+        setError, 
         isLoading, 
-        logout
+        setIsLoading
     }
-    return <ActivityContext.Provider value = {authContextValue} {...props}/>
+
+    return (
+        <AuthContext.Provider value = {activityContextValue}>
+            <>{children}</>
+        </AuthContext.Provider>
+    )
 } 
 
-const useAuthContext = () => React.useContext(ActivityContext)
+const useActivityContext = () => React.useContext(ActivityContext)
 
-export {ActivityContextProvider, useAuthContext}
+export {ActivityContextProvider, useActivityContext}

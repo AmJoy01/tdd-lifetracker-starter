@@ -11,7 +11,7 @@ const AuthContextProvider = ({children})=>{
     const [error, setError] = React.useState(null)
     
     React.useEffect(()=>{
-        const getUser = async ()=>{
+        const fetchUser = async ()=>{
             setIsProcessing(true)
             const { data, error} = await apiClient.fetchUserfromToken()
             if(data){
@@ -24,7 +24,7 @@ const AuthContextProvider = ({children})=>{
             if(token){
                 setIsProcessing(false)
                 apiClient.setToken(token)
-                getUser()
+                fetchUser()
             }
         }
     }, [])

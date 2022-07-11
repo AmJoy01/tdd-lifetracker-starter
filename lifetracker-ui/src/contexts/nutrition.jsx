@@ -10,7 +10,7 @@ const NutritionContextProvider = ({ children }) => {
     const [error, setError] = React.useState(null)
 
     React.useEffect(() => {
-        const getNutrition = async () => {
+        const fetchNutrition = async () => {
             setIsLoading(true)
             
             const {data, error } = await apiClient.listOfNutrition()
@@ -24,7 +24,7 @@ const NutritionContextProvider = ({ children }) => {
             setIsLoading(false)
             setInitialized(true)
         }
-        getNutrition()
+        fetchNutrition()
     }, [])
     
     const nutritionContextValue = {
