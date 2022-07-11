@@ -32,9 +32,9 @@ class ApiClient {
         }
 
         try {
-            const response = await axios({ url, method, data, headers })
+            const res = await axios({ url, method, data, headers })
             return {
-                data: response.data,
+                data: res.data,
                 error: null
             }
         } catch (err) {
@@ -68,7 +68,7 @@ class ApiClient {
 
     async logoutUser() {
         this.setToken(null)
-        localStorage.setItem(this.tokenName, "")
+        localStorage.setItem(this.nameOfToken, "")
     }
 
     async signupUser(credentials) {
