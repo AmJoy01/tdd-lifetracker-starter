@@ -1,6 +1,6 @@
  import * as React from "react"
  import {Link, useNavigate} from "react-router-dom"
- import apiClient from "..//../services/apiClient"
+ import apiClient from "../../services/apiClient"
  import "./NutritionForm.css"
 
  export default function NutriitionForm(){
@@ -10,9 +10,9 @@
     const [form, setForm] = React.useState({
         name:"",
         category:"",
+        quantity:"",
         calories:"",
         imageUrl:""
-
     })
   
     const handleOnInputChange = (event) => {
@@ -24,26 +24,31 @@
         setIsLoading(true)
         setErrors((e) => ({ ...e, form: null }))
     
-        const {data, error} = await apiClient.loginUser({ 
+        const {data, error} = await apiClient.createNutrition({ 
             name: form.name, 
-            category: form.category, 
+            category: form.category,
+            quantity: form.quantity, 
             calories: form.calories, 
             imageUrl: form.imageUrl
         })
         if(error){
-          setErrors((e) => ({ ...e, form: error}))
+          setErrors(error)
         } 
+        // if(data){
+        //   setForm({name:"",
+        //   category:"",
+        //   quantity:"",
+        //   calories:"",
+        //   imageUrl:""})
+        // }
 
         setIsLoading(false)
-        nagivate("/nutrition")
+        navigate("/nutrition")
       }
 
   return(
     <div className="nutrition-form">
       <div className="container">
-          <h2>Record Nutrition</h2>
-          <br />
-
           <div className="form">
               <div className="input-field">
                 <label htmlFor="name">Name</label>
@@ -60,16 +65,23 @@
                 <label htmlFor="name">Category</label>
                 <input 
                     type="text" 
-                    name="name" 
+                    name="category" 
                     placeholder="Nutrition name" 
                     value= {form.category}
                     onChange={handleOnInputChange}
                 />
                 {errors.name && <span className="error">{errors.name}</span>}
               </div>
-
-              <input className="input-field" type="number" name="calories" placeholder="Calories" value={form.calories} onChange={handleOnInputChange}/>
+              <div className="split-input-field">
+                <label htmlFor="quantity">Quantity</label>
+              <input className="input-field" type="number" name="quantity" min={1} max={10000000000} value={form.quantity} onChange={handleOnInputChange}/>
+              <label htmlFor="calories">Calories</label>
+              <input className="input-field" type="number" name="calories" min={0} max ={10000000000} step={10} value={form.calories} onChange={handleOnInputChange}/>
+              </div>
+              <div className="input-field">
+                <label htmlFor="imageUrl">Image URL</label>
               <input className="input-field" type="url" name="imageUrl" placeholder="http://imageUrl.com/" value={form.imageUrl} onChange={handleOnInputChange}/>
+              </div>
               <button className="submit-nutrition" onClick={handleOnSubmit}>{isLoading ? "Loading..." : "Save"}</button>
           </div>
           {/* End of form */}

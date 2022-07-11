@@ -4,6 +4,7 @@ import { useAuthContext } from "../../contexts/auth"
 import { NutritionContextProvider, useNutritionContext } from "../../contexts/nutrition"
 import NutritionOverview from "../NutritionOverview/NutritionOverview"
 import NutritionNew from "components/NutritionNew/NutritionNew"
+import NutritionDetail from "../NutritionDetail/NutritionDetail"
 export default function NutritionContainer(){
     return (
         <NutritionContextProvider>
@@ -25,6 +26,7 @@ function NutritionPage(){
             <Routes>
                 <Route path= "/" element= {<NutritionOverview/>}/>
                 <Route path= "/create" element= {<NutritionNew/>}/>
+                <Route path= "/id/:nutritionId" element= {<NutritionDetail/>}/>
             </Routes>
             </div>
         </div>

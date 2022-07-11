@@ -18,9 +18,10 @@ export default function NutritionOverview(){
                 </Link>
             </div>
             <div className="feed">
-                <div className="empty-message">
+
+                {/* <div className="empty-message">
                     <h2>Nothing here yet.</h2>
-                </div>
+                </div> */}
                     <NutritionFeed/>
             </div>
         </div>
