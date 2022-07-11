@@ -4,7 +4,7 @@ const db = require("../db")
 const { BadRequestError, UnauthorizedError } = require("../utils/errors")
 
 class User {
-    static makePublicUser(user) {
+    static async makePublicUser(user) {
         return {
             id: user.id,
             email: user.email,
@@ -15,6 +15,7 @@ class User {
 
     //Login 
     static async login(credentials) {
+
         const requiredFields = ["email", "password"]
         requiredFields.forEach((property) => {
             if (!credentials.hasOwnProperty(property)) {
@@ -23,12 +24,15 @@ class User {
         })
 
         const user = await User.fetchUserByEmail(credentials.email)
+
         if (user) {
             const isValid = await bcrypt.compare(credentials.password, user.password)
             if (isValid) {
                 return User.makePublicUser(user)
             }
         }
+
+        throw new UnauthorizedError("Invalid email/password combo")
     }
 
     // Register
@@ -54,8 +58,9 @@ class User {
         if (existingUsername) {
             throw new BadRequestError(`A user already exists with username: ${credentials.username}`)
         }
+
         const hashedPassword = await bcrypt.hash(credentials.password, BCRYPT_WORK_FACTOR)
-        console.log(hashedPassword)
+
         const lowercasedEmail = credentials.email.toLowerCase()
 
         const result = await db.query(
@@ -80,7 +85,7 @@ class User {
         )
 
         const user = result.rows[0]
-        return user
+        return User.makePublicUser(user)
     }
 
 
