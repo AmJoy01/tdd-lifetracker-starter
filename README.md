@@ -38,8 +38,12 @@ Implement any of the following features to improve the application:
 - [ ] Create a page that shows all other users that use the life tracker application and allow users to follow each other.
 
 ### Walkthrough Video
-
+####  Week 1
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/93353341/177064532-02ae4e55-8513-4992-a8b6-aa088e506527.gif)
+
+#### Week 2
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/93353341/178192908-abd7f7da-96b8-4db7-9476-de0f41302e72.gif)
 
 
 ### Reflection
