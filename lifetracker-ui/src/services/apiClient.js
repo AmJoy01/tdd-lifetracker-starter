@@ -80,4 +80,5 @@ class ApiClient {
     }
 }
 
-export default new ApiClient(API_BASE_URL || "http://localhost:3001")
+// export default new ApiClient(API_BASE_URL || "http://localhost:3001")
+export default new ApiClient("https://lifetracker-backend-amber.herokuapp.com")
