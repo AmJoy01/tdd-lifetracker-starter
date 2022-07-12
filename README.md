@@ -4,6 +4,7 @@ Submitted by: Amber Lewis
 
 Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker Week 1</a>
 <a href="https://recordit.co/ntj2R7FR1N">Life Tracker Week 2</a>
+<a href="https://lifetracker-health.surge.sh/">Life Tracker Website</a>
 
 
 ## Application Features
@@ -21,7 +22,7 @@ Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker Week
 - [x] Users have access to an overview Activity page that show one summary statistic about each of the 3 types of activity tracked.
 - [x] The API should have a `security` middleware that only allows authenticated users to access resources and only allows users to access resources about themselves. 
 - [x] Users should have the ability to track at least **1** types of activities (i.e Nutrition, Exercise, Sleep, etc.). Each activity should be tracked on separate pages.
-- [ ] Deployed website with Heroku & Surge. 
+- [x] Deployed website with Heroku & Surge. 
 
 **Detailed Activity Page:**
 - [ ] The detailed activity page should display a feed of all previous tracked activities.
@@ -46,7 +47,7 @@ Implement any of the following features to improve the application:
 
 #### Week 2
 
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/93353341/178192908-abd7f7da-96b8-4db7-9476-de0f41302e72.gif)
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/93353341/178397777-0fa9af7a-080d-4162-be47-2d00a2a54653.gif)
 
 
 ### Reflection
@@ -65,7 +66,7 @@ The Login and Registration page.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- Whole playlist by Mr. Jeff Astor
 
 ### Shout out
 
