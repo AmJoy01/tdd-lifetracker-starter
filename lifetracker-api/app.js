@@ -20,6 +20,9 @@ app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
 app.use("/nutrition", nutritionRoutes)
 
+app.get("/", (req, res, next) => {
+    return res.status(200).json({ ping: "pong" })
+})
 
 app.use((req, res, next) => {
     return next(new NotFoundError())
