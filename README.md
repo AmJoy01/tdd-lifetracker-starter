@@ -2,9 +2,9 @@
 
 Submitted by: Amber Lewis
 
-Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker Week 1</a>
-<a href="https://recordit.co/ntj2R7FR1N">Life Tracker Week 2</a>
-<a href="https://lifetracker-health.surge.sh/">Life Tracker Website</a>
+Deployed Application: <a href="https://recordit.co/zdMyD5e8cU">Life Tracker Week 1</a> <br/>
+<a href="https://recordit.co/ntj2R7FR1N">Life Tracker Week 2</a> <br/>
+<a href="https://lifetracker-health.surge.sh/">Life Tracker Website</a> 
 
 
 ## Application Features
